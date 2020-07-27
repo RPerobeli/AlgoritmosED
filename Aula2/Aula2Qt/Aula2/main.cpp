@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
+
 // void imprime(char* s)
 // {
 //     printf("%s", s);
