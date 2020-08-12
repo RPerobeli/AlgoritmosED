@@ -45,15 +45,15 @@ int InsereCadastro(Cadastro **inicio)
     return 0;
 }
 
-int BuscaCadastrado(Cadastro *inicio)
+int BuscaCadastrado(Cadastro **inicio)
 {
-    Cadastro *percorreLista = inicio;
+    Cadastro *percorreLista = *inicio;
     char nomeProcurado[20];
     int tel = 0;
     printf("\nInsira o nome do cadastrado: ");
     scanf("%s" , nomeProcurado);
 
-    while(percorreLista->nome!=nomeProcurado && percorreLista->next != NULL)
+    while(strcmp(percorreLista->nome,nomeProcurado)!=0 && percorreLista->next != NULL)
     {
         percorreLista = percorreLista->next;
     }
@@ -100,7 +100,7 @@ int main()
         }
         case(2):
         {
-            telefone = BuscaCadastrado(inicio);
+            telefone = BuscaCadastrado(&inicio);
             printf("\nTelefone = %d" , telefone);
         }
         }
