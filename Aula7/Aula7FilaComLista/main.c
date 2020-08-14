@@ -45,6 +45,7 @@ int RemoveFila(Celula **lista)
         *lista= atual->next;
         return resp;
     }
+    return 0;
 }
 
 int main()
@@ -55,6 +56,8 @@ int main()
     InsereFila(&lista,20);
     printf("%d \n", RemoveFila(&lista));
     printf("%d \n", RemoveFila(&lista));
+    printf("%d \n", RemoveFila(&lista));
+
 
 
     return 0;
