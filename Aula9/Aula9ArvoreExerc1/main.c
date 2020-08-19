@@ -39,14 +39,13 @@ int inserir(Celula **r, char *_nome, int telefone)
 }
 int busca(Celula *r, char *_nome)
 {
-    if(strcmp(r->nome,_nome)==0)
+    if(r == NULL)
+    {
+        return -1;
+    }else if(strcmp(r->nome,_nome)==0)
     {
         printf("Nome consta na lista");
         return r->tel;
-    }else if(r->esq == NULL && r->dir == NULL)
-    {
-        printf("Nome não está na lista");
-        return -1;
     }else if (strcmp(r->nome,_nome)<0)
     {
         busca(r->dir,_nome);
