@@ -15,12 +15,12 @@ typedef struct Cadastro
 
 int InsereCadastro(Cadastro **inicio)
 {
-    char nome[20];
+    char nome_input[20];
     Cadastro *cadastroAtual = malloc(sizeof(Cadastro));
     printf("\nQual o nome que deseja cadastrar?");
-    scanf("%s", nome);
+    scanf("%s", nome_input);
     cadastroAtual->nome = malloc(20*sizeof(char));
-    strcpy(cadastroAtual->nome,nome);
+    strcpy(cadastroAtual->nome,nome_input);
     printf("\nQual o telefone??");
     scanf("%d", &cadastroAtual->telefone);
     cadastroAtual->next = NULL;
@@ -32,10 +32,10 @@ int InsereCadastro(Cadastro **inicio)
     {
         Cadastro *percorreLista = *inicio;
         while(percorreLista->next!= NULL)
-        {  
+        {
             if(strcmp(cadastroAtual->nome,percorreLista->nome)==0)
             {
-                printf("\n Nome repetido");
+            printf("\n Nome repetido");
                 return 1;
             }
             percorreLista = percorreLista->next;

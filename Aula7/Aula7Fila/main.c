@@ -14,42 +14,42 @@ fila* cria_fila(){
     F->aux=0;
     return F;
 };
-int entrada(fila* f, int v){
-    if (!(f->f==TAM)){
-        f->v[f->f]=v;
-        if(f->f==f->i-1)
+
+int entrada(fila* F, int v){
+    if (!(F->f==TAM)){
+        F->v[F->f]=v;
+        if(F->f==F->i-1)
         {
-            f->aux = 1;
+            F->aux = 1;
         }
-        f->f=f->f+1;
+        F->f=F->f+1;
 
         return 1;
     }
     else{
-        if(f->i == 0 || f->aux == 1)
+        if(F->i == 0 || F->aux == 1)
         {
              printf("Fila cheia \n");
         }else
         {
-            f->f=0;
-            entrada(f,v);
+            F->f=0;
+            entrada(F,v);
         }
-
     }
 }
-int saida(fila* f){
+int saida(fila* F){
     int resp;
-    if(f->f==f->i){
+    if(F->f==F->i){
         printf("Fila vazia \n");
         resp = 0;
     }
     else {
-        resp=f->v[f->i];
-        f->i++;
-        f->aux =0;
-        if(f->i >= TAM)
+        resp=F->v[F->i];
+        F->i++;
+        F->aux =0;
+        if(F->i >= TAM)
         {
-            f->i=0;
+            F->i=0;
         }
     }
     return resp;
@@ -66,7 +66,7 @@ int main(){
     for(i=1;i<=4;i++)
        printf("%d\n",saida(f1));
     for(i=1;i<=6;i++)
-       entrada(f1,i);
+       entrada(f1,i+1);
     for(i=1;i<=2;i++)
        printf("%d\n",saida(f1));
     return 0;
