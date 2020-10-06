@@ -1,0 +1,20 @@
+typedef struct fila{
+    int v [100];
+    int f,i; // posição de entrada
+} fila;
+
+int Remove(fila *F)
+{
+    int val = 0;
+    if(F->f==F->i)
+    {
+        printf("Fila vazia");
+    }else
+    {
+        val = F->v[F->i];
+        F->i++;
+	printf("valor retirado foi: %d", val);
+    }
+    return val;
+}
+
